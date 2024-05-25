@@ -7,6 +7,7 @@ use \App\Http\Controllers\TSControllerController;
 use \App\Http\Controllers\TSSubCategoryController;
 use \App\Http\Controllers\TSItemSizeController;
 use \App\Http\Controllers\TSItemTypeController;
+use \App\Http\Controllers\TSItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,12 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('ShowItemType', [TSItemTypeController::class, 'show']);
     Route::post('UpdateItemType', [TSItemTypeController::class, 'update']);
     Route::post('DeleteItemType', [TSItemTypeController::class, 'delete']);
+
+    Route::get('Item', [TSItemController::class, 'index']);
+    Route::post('AddItem', [TSItemController::class, 'store']);
+    Route::post('ShowItem', [TSItemController::class, 'show']);
+    Route::post('UpdateItem', [TSItemController::class, 'update']);
+    Route::post('DeleteItem', [TSItemController::class, 'delete']);
 
     Route::resource('category', TSControllerController::class);
 });
