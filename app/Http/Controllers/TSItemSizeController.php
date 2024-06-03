@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class TSItemSizeController extends Controller
 {
     public function index():JsonResponse{
-        $rowData = TSItemSize::all();
+        $rowData = TSItemSize::where('status', '1')->get();
         return $this->sendResponse(TSItemSizeResource::collection($rowData),"Category Get Successfully");
     }
 
@@ -87,9 +87,17 @@ class TSItemSizeController extends Controller
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $id = $input['id'];
+
+        $userId = auth()->user()->id;
+        $inArr = [
+            'status' => '3',
+            'update_by' => $userId,
+            'update_date' => $this->getCurrentDateTime(),
+        ];
         $rowData = TSItemSize::find($id);
         if ($rowData) {
-            $rowData->delete();
+            $rowData->update($inArr);
+            // $rowData->delete();
             return $this->sendResponse([], "Item Size Deleted Successfully");
         } else {
             return $this->sendError("Item Size Not Found", []);

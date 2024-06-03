@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 class TSItemTypeController extends Controller
 {
     public function index():JsonResponse{
-        $rowData = TSItemType::all();
+        $rowData = TSItemType::where('status', '1')->get();
         if ($rowData) {
             return $this->sendResponse(TSItemTypeResource::collection($rowData),"Item Type Get Successfully");
         }
@@ -91,9 +91,17 @@ class TSItemTypeController extends Controller
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $id = $input['id'];
+
+        $userId = auth()->user()->id;
+        $inArr = [
+            'status' => '3',
+            'update_by' => $userId,
+            'update_date' => $this->getCurrentDateTime(),
+        ];
         $rowData = TSItemType::find($id);
         if ($rowData) {
-            $rowData->delete();
+            $rowData->update($inArr);
+            // $rowData->delete();
             return $this->sendResponse([], "Item Type Deleted Successfully");
         } else {
             return $this->sendError("Item Type Not Found", []);

@@ -2,30 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\TSItemResource;
+use App\Http\Resources\TSCategoryResource;
 use App\Http\Resources\TSItemSizeResource;
-use App\Models\TSItem;
+use App\Models\TSCategory;
+use App\Models\TSItemSize;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
-class TSItemController extends Controller
+class TSCategoryController extends Controller
 {
     public function index():JsonResponse{
-        $rowData = TSItem::where('status', '1')->get();
-        return $this->sendResponse(TSItemResource::collection($rowData),"Item Get Successfully");
+        $rowData = TSCategory::where('status', '1')->get();
+        return $this->sendResponse(TSCategoryResource::collection($rowData),"Category Get Successfully");
     }
 
     public function store(Request $request):JsonResponse{
         $validator = Validator::make($request->all(),[
-            'type_id' => 'required',
-            'category_id' => 'required',
-            'subcategory_id' => 'required',
-            'size_id' => 'required',
             'name' => 'required',
-            'details' => 'required',
-            'item_code' => 'required',
-            'grade' => 'required',
             'status' => 'required|integer',
         ]);
         if ($validator->fails()){
@@ -33,20 +28,13 @@ class TSItemController extends Controller
         }
         $userId = auth()->user()->id;
         $inArr= [
-            'type_id'=>$request['type_id'],
-            'category_id'=>$request['category_id'],
-            'subcategory_id'=>$request['subcategory_id'],
-            'size_id'=>$request['size_id'],
             'name'=>$request['name'],
-            'details'=>$request['details'],
-            'item_code'=>$request['item_code'],
-            'grade'=>$request['grade'],
             'status'=>$request['status'],
             'create_by' => $userId,
             'create_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSItem::create($inArr);
-        return $this->sendResponse(new TSItemResource($rowData),"Item Added Successfully");
+        $rowData = TSCategory::create($inArr);
+        return $this->sendResponse(new TSCategoryResource($rowData),"Category Added Successfully");
     }
 
     public function show(Request $request):JsonResponse{
@@ -58,25 +46,18 @@ class TSItemController extends Controller
         }
         $id=$request['id'];
 
-        $rowData = TSItem::find($id);
+        $rowData = TSCategory::find($id);
         if($rowData){
-            return $this->sendResponse(new TSItemResource($rowData),"Item Get Successfully");
+            return $this->sendResponse(new TSCategoryResource($rowData),"Category Get Successfully");
         }else{
-            return $this->sendResponse([],"Item Not Found");
+            return $this->sendResponse([],"Category Not Found");
         }
     }
 
     public function update(Request $request):JsonResponse{
-        $validator = Validator::make($request->all(),[
-            'id' => 'required',
-            'type_id' => 'required',
-            'category_id' => 'required',
-            'subcategory_id' => 'required',
-            'size_id' => 'required',
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|integer',
             'name' => 'required',
-            'details' => 'required',
-            'item_code' => 'required',
-            'grade' => 'required',
             'status' => 'required|integer',
         ]);
         if ($validator->fails()) {
@@ -84,25 +65,18 @@ class TSItemController extends Controller
         }
         $userId = auth()->user()->id;
         $inArr = [
-            'type_id'=>$request['type_id'],
-            'category_id'=>$request['category_id'],
-            'subcategory_id'=>$request['subcategory_id'],
-            'size_id'=>$request['size_id'],
-            'name'=>$request['name'],
-            'details'=>$request['details'],
-            'item_code'=>$request['item_code'],
-            'grade'=>$request['grade'],
-            'status'=>$request['status'],
+            'name' => $request->input('name'),
+            'status' => $request->input('status'),
             'update_by' => $userId,
             'update_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSItem::find($request->input('id'));
+        $rowData = TSCategory::find($request->input('id'));
         if ($rowData) {
             $rowData->update($inArr);
-            return $this->sendResponse(new TSItemResource($rowData), "Item Updated Successfully");
+            return $this->sendResponse(new TSCategoryResource($rowData), "Category Updated Successfully");
         }
         else {
-            return $this->sendError('Item not found.');
+            return $this->sendError('Category not found.');
         }
     }
 
@@ -115,20 +89,20 @@ class TSItemController extends Controller
             return $this->sendError('Validation Error.', $validator->errors());
         }
         $id = $input['id'];
-
         $userId = auth()->user()->id;
         $inArr = [
             'status' => '3',
             'update_by' => $userId,
             'update_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSItem::find($id);
+        $rowData = TSCategory::find($id);
         if ($rowData) {
             $rowData->update($inArr);
             // $rowData->delete();
-            return $this->sendResponse([], "Item Deleted Successfully");
+            return $this->sendResponse([], "Category Deleted Successfully");
         } else {
-            return $this->sendError("Item Not Found", []);
+            return $this->sendError("Category Not Found", []);
         }
     }
+
 }

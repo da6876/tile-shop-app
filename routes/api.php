@@ -3,11 +3,13 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\API\AuthUserController;
-use \App\Http\Controllers\TSControllerController;
+use \App\Http\Controllers\TSCategoryController;
 use \App\Http\Controllers\TSSubCategoryController;
 use \App\Http\Controllers\TSItemSizeController;
 use \App\Http\Controllers\TSItemTypeController;
 use \App\Http\Controllers\TSItemController;
+use \App\Http\Controllers\TSItemStockController;
+use \App\Http\Controllers\TSItemSalesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +22,6 @@ use \App\Http\Controllers\TSItemController;
 |
 */
 
-/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});*/
-
 Route::get('/', function () {
     return 'welcome';
 });
@@ -31,7 +29,19 @@ Route::post('login', [AuthUserController::class, 'login']);
 Route::post('register', [AuthUserController::class, 'register']);
 
 Route::middleware(['auth:api'])->group(function () {
+
+    Route::get('GetsUsers', [AuthUserController::class, 'index']);
+    Route::post('UpdateUsers', [AuthUserController::class, 'update']);
+    Route::post('DeleteUsers', [AuthUserController::class, 'delete']);
+
+    Route::get('Category', [TSCategoryController::class, 'index']);
+    Route::post('AddCategory', [TSCategoryController::class, 'store']);
+    Route::post('ShowCategory', [TSCategoryController::class, 'show']);
+    Route::post('UpdateCategory', [TSCategoryController::class, 'update']);
+    Route::post('DeleteCategory', [TSCategoryController::class, 'delete']);
+
     Route::get('SubCategory', [TSSubCategoryController::class, 'index']);
+    Route::post('SubCategory', [TSSubCategoryController::class, 'getSubCategoryByCat']);
     Route::post('AddSubCategory', [TSSubCategoryController::class, 'store']);
     Route::post('ShowSubCategory', [TSSubCategoryController::class, 'show']);
     Route::post('UpdateSubCategory', [TSSubCategoryController::class, 'update']);
@@ -55,5 +65,15 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('UpdateItem', [TSItemController::class, 'update']);
     Route::post('DeleteItem', [TSItemController::class, 'delete']);
 
-    Route::resource('category', TSControllerController::class);
+    Route::get('Stock', [TSItemStockController::class, 'index']);
+    Route::post('AddStock', [TSItemStockController::class, 'store']);
+    Route::post('ShowStock', [TSItemStockController::class, 'show']);
+    Route::post('UpdateStock', [TSItemStockController::class, 'update']);
+    Route::post('DeleteStock', [TSItemStockController::class, 'delete']);
+
+    Route::get('Sales', [TSItemSalesController::class, 'index']);
+    Route::post('AddSales', [TSItemSalesController::class, 'store']);
+    Route::post('ShowSales', [TSItemSalesController::class, 'show']);
+    Route::post('UpdateSales', [TSItemSalesController::class, 'update']);
+    Route::post('DeleteSales', [TSItemSalesController::class, 'delete']);
 });

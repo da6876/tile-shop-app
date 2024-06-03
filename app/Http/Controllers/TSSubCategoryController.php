@@ -13,7 +13,18 @@ use Illuminate\Support\Facades\Validator;
 class TSSubCategoryController extends Controller
 {
     public function index():JsonResponse{
-        $category = TSSubCategory::all();
+        $category = TSSubCategory::where('status', '1')->get();
+        return $this->sendResponse(TSSubCategoryResource::collection($category),"Category Get Successfully");
+    }
+    public function getSubCategoryByCat(Request $request):JsonResponse{
+
+        $validator = Validator::make($request->all(),[
+            'categoryid' => 'required|integer',
+        ]);
+        if ($validator->fails()){
+            return  $this->sendError('Validation Error.',$validator->errors());
+        }
+        $category = TSSubCategory::where('categoryid', $request->categoryid)->get();
         return $this->sendResponse(TSSubCategoryResource::collection($category),"Category Get Successfully");
     }
 
@@ -101,25 +112,30 @@ class TSSubCategoryController extends Controller
         }
     }
 
-    public function delete(Request $request):JsonResponse{
+    public function delete(Request $request): JsonResponse {
         $input = $request->all();
-        $validator = Validator::make($request->all(),[
+        $validator = Validator::make($input, [
             'id' => 'required|integer',
         ]);
-
-        if ($validator->fails()){
-            return  $this->sendError('Validation Error.',$validator->errors());
+        if ($validator->fails()) {
+            return $this->sendError('Validation Error.', $validator->errors());
         }
-        $id=$input['id'];
+        $id = $input['id'];
 
-        $category = TSSubCategory::find($id);
-        if($category){
-            $fff = TSSubCategory::deleted($id);
-            return $this->sendResponse(new TSSubCategoryResource($fff),"SubCategory Delete Successfully");
-        }else{
-            return $this->sendResponse([],"SubCategory Not Found");
+        $userId = auth()->user()->id;
+        $inArr = [
+            'status' => '3',
+            'update_by' => $userId,
+            'update_date' => $this->getCurrentDateTime(),
+        ];
+        $rowData = TSSubCategory::find($id);
+        if ($rowData) {
+            $rowData->update($inArr);
+            // $rowData->delete();
+            return $this->sendResponse([], "SubCategory Deleted Successfully");
+        } else {
+            return $this->sendError("SubCategory Not Found", []);
         }
-
     }
 
 }
