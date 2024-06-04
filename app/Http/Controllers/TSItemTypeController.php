@@ -12,7 +12,7 @@ class TSItemTypeController extends Controller
 {
     public function index():JsonResponse{
         $rowData = TSItemType::where('status', '1')->get();
-        if ($rowData) {
+        if ($rowData->count() > 0) {
             return $this->sendResponse(TSItemTypeResource::collection($rowData),"Item Type Get Successfully");
         }
         else {
@@ -98,7 +98,7 @@ class TSItemTypeController extends Controller
             'update_by' => $userId,
             'update_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSItemType::find($id);
+        $rowData = TSItemType::where('id', $id)->whereNotIn('status', ['3'])->first();
         if ($rowData) {
             $rowData->update($inArr);
             // $rowData->delete();

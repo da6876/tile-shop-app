@@ -15,7 +15,11 @@ class TSItemStockController extends Controller
 
     public function index():JsonResponse{
         $rowData = TSItemStock::where('status', '1')->get();
-        return $this->sendResponse(TSItemStockResource::collection($rowData),"Stock Get Successfully");
+        if ($rowData->count() > 0) {
+            return $this->sendResponse(TSItemStockResource::collection($rowData),"Stock Get Successfully");
+        }else{
+            return $this->sendError("Stock Not Found", []);
+        }
     }
 
     public function store(Request $request):JsonResponse{
@@ -124,7 +128,7 @@ class TSItemStockController extends Controller
             'update_by' => $userId,
             'update_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSItemStock::find($id);
+        $rowData = TSItemStock::where('id', $id)->whereNotIn('status', ['3'])->first();
         if ($rowData) {
             $rowData->update($inArr);
             // $rowData->delete();

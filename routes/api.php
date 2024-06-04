@@ -25,6 +25,7 @@ use \App\Http\Controllers\TSItemSalesController;
 Route::get('/', function () {
     return 'welcome';
 });
+
 Route::post('login', [AuthUserController::class, 'login']);
 Route::post('register', [AuthUserController::class, 'register']);
 

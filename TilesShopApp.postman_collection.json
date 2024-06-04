@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\" :\"dhaliabir@gmail.com\",\r\n    \"password\" :\"123456\"\r\n}",
+							"raw": "{\r\n    \"name\" :\"Rifat\",\r\n    \"email\" :\"rifat@gmail.com\",\r\n    \"password\" :\"123456\",\r\n    \"c_password\" :\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -25,15 +25,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/register",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/register",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"register"
@@ -57,18 +55,121 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/login",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/login",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/tile-shop-app/api/GetsUsers",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"GetsUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"9\",\r\n    \"name\":\"Ashif Dhali\",\r\n    \"email\":\"ashif@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/UpdateUsers",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"UpdateUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : \"9\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/DeleteUsers",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"DeleteUsers"
 							]
 						}
 					},
@@ -81,32 +182,42 @@
 			"item": [
 				{
 					"name": "GetCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2JmMzJlZDE4MzRmYmNjNzI1YTdkMjNlMjcxZmQzNGYwNGQ2MjMwYjFjYzg5Y2ZmMjUyZDM5MmQ1N2RlZDhhMzZmZWJmYjI4ZjVkMTg5ODIiLCJpYXQiOjE3MTY1NTE5MDAuOTg4Mzk1LCJuYmYiOjE3MTY1NTE5MDAuOTg4Mzk3LCJleHAiOjE3NDgwODc5MDAuOTgzMzM3LCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.I0Dt0jOdfBVHv5AHkulaW1S-9bSj6jqqEWFgTmxPJyYHv7e6XlcYoc1eZ19Noa3FLZfELEZiRXPLSxkU1ncdq7Z-bppW5sp2hGLk934uGnRQtqkOhPHm-JbLVIi9wJ-BfQcJWhfq__quOwGj_astFkQ_PvYTXAhy-ZA4b7KUzrBIqhAno8dnbWvbq1ZPhX3ik8dY8zo2dCAEe8-uyXPtMQz7GB5R4AO6MqUiAeXdBGxxr74JSisXVICqXp3y37859MivyitGXadrS7QYDTP4IQ2jyhVt8F7Aa-kcavwujJnQtALRYy2-5kqnCFSunyfzyH76KTSuQ5QNcfwyXMfRlDcYAevN-iqVQXl6SqxeucFR3xJztjuKksG5MTPptW-T3mGgi_xPWviy92Phghc0-fCoublunRKzEVYZBoPxZng-p7IwEeMneC6uPR-PFYiY8FejZvd3wrcUMVFV28EFUhBEcXmjpXLkG30iBV47gT0wTr1qlG1FE7mnwZMZ-Dh0YmBCsddwQY7JxwOcyhRCHrh5HoI9r3tLOHnN536icCyqUQHBNtXM5DNcFVFRTiLBrSOIHZTLE15Q5YO2PMK56omvrWS4Pe3G-k-X3d7VnItZoeQ1j0oyyX1xtDSMCHvAR74jLCZryTHVqsoIlAgXHUoQLOGx5U8xJJo5fVaKMD0",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjE3YWM2NWMwYTMxNWEzZmQwOWFiZGM0MjI4Y2RjNjIzMGY1MDlmN2U0ZDg5NGM3NTQxMDliMDBiZDQ2MWRmNGE0ZDk5Yzk4YWViZTk3NjIiLCJpYXQiOjE3MTcxMzQ3NjAuNzA1NjQ2MDM4MDU1NDE5OTIxODc1LCJuYmYiOjE3MTcxMzQ3NjAuNzA1NjQ3OTQ1NDA0MDUyNzM0Mzc1LCJleHAiOjE3NDg2NzA3NjAuNjk4OTg1MDk5NzkyNDgwNDY4NzUsInN1YiI6IjgiLCJzY29wZXMiOltdfQ.Vp2zyTKyJn21busPDL9btGNSoK3DWZg3jQW3MXsLt8BwIcGoUWAoo9gLZ4_Ygjf7MDeLP9I7RipnXkd_VkVOPVLUiPpUPhw6oL2pVM7rpa7PBCslYdGrKy_Jv-seyW9NFKZwErZ7pklX9HQKcCkCTBlsP4s0ERLPFJ9Q0hFVY49OpbXQByR8wvndJ5fOyy36t4E_K3GWoU-xGEOaMsXLEFV2MiKuQrz0cIkjOQ9LtD0GTZ0BiOuqrBLdN4E-UefW6wIfICOErYN6O_AYrVZKqNiCTwYf4m7SbxSAJ8BEvgRCE3zyIbBs8a8222S4LDpd3V5PBiK9SaHl5Ab50Enx0fyZg63y4bGh4E5RKVDNloIneHBb5n3uCosN0Iu-ZmSU4oJm8rTBfLJbfsKUtABT7w4Njq72wQONvcpUfmJma3_jxjHI75QVR9x1m1XcneDnB8L1uc4YnRx9hel-rF3SDvqCU4WFpcF9XRxJTC4DGe4JMj1e8531OoxS5Je2eh2itgG12Yl-r6owIw4IQkI3OH_BojIz2IeSjzrsVghP88igM1PkKgtlVcsVo7aUNpWN2ttFQDYNFn28yNzjo5snalBZsmXRukSw-xtjyJl_0VHorfJBrmqBE7wP0P5-hrvK99hZPqo8aH-21-4SdrLNw_Ts2lwFUrISq7h_bUbw4gE",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/category",
-							"protocol": "http",
+							"raw": "https://tilesshop.sourceofcapacity.com/api/Category",
+							"protocol": "https",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
-								"category"
+								"Category"
 							]
 						}
 					},
@@ -129,7 +240,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"uid\" :\"ad3342224m\",\r\n    \"name\" :\"Test22\",\r\n    \"display_order\":\"1\",\r\n    \"status\":\"1\",\r\n    \"create_by\":\"Test\",\r\n    \"create_date\":\"122233\"\r\n}",
+							"raw": "{\r\n    \"name\" :\"Test22\",\r\n    \"status\":\"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -137,18 +248,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/category",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/AddCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
-								"category"
+								"AddCategory"
 							]
 						}
 					},
@@ -167,22 +276,28 @@
 								}
 							]
 						},
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1011004\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/category/1011004",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/ShowCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
-								"category",
-								"1011004"
+								"ShowCategory"
 							]
 						}
 					},
@@ -201,11 +316,11 @@
 								}
 							]
 						},
-						"method": "PUT",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\" :\"22222\",\r\n    \"status\":\"1\",\r\n    \"create_by\":\"Test\",\r\n    \"create_date\":\"122233\"\r\n}",
+							"raw": "{\r\n    \"id\" :\"1011004\",\r\n    \"uid\" :\"ad334222422m\",\r\n    \"name\" :\"Test21112\",\r\n    \"display_order\":\"1\",\r\n    \"status\":\"1\",\r\n    \"create_by\":\"Test\",\r\n    \"create_date\":\"122233\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -213,19 +328,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/category/1011004",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/UpdateCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
-								"category",
-								"1011004"
+								"UpdateCategory"
 							]
 						}
 					},
@@ -244,22 +356,28 @@
 								}
 							]
 						},
-						"method": "DELETE",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"1011004\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/category/1011021",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/DeleteCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
-								"category",
-								"1011021"
+								"DeleteCategory"
 							]
 						}
 					},
@@ -278,7 +396,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2JmMzJlZDE4MzRmYmNjNzI1YTdkMjNlMjcxZmQzNGYwNGQ2MjMwYjFjYzg5Y2ZmMjUyZDM5MmQ1N2RlZDhhMzZmZWJmYjI4ZjVkMTg5ODIiLCJpYXQiOjE3MTY1NTE5MDAuOTg4Mzk1LCJuYmYiOjE3MTY1NTE5MDAuOTg4Mzk3LCJleHAiOjE3NDgwODc5MDAuOTgzMzM3LCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.I0Dt0jOdfBVHv5AHkulaW1S-9bSj6jqqEWFgTmxPJyYHv7e6XlcYoc1eZ19Noa3FLZfELEZiRXPLSxkU1ncdq7Z-bppW5sp2hGLk934uGnRQtqkOhPHm-JbLVIi9wJ-BfQcJWhfq__quOwGj_astFkQ_PvYTXAhy-ZA4b7KUzrBIqhAno8dnbWvbq1ZPhX3ik8dY8zo2dCAEe8-uyXPtMQz7GB5R4AO6MqUiAeXdBGxxr74JSisXVICqXp3y37859MivyitGXadrS7QYDTP4IQ2jyhVt8F7Aa-kcavwujJnQtALRYy2-5kqnCFSunyfzyH76KTSuQ5QNcfwyXMfRlDcYAevN-iqVQXl6SqxeucFR3xJztjuKksG5MTPptW-T3mGgi_xPWviy92Phghc0-fCoublunRKzEVYZBoPxZng-p7IwEeMneC6uPR-PFYiY8FejZvd3wrcUMVFV28EFUhBEcXmjpXLkG30iBV47gT0wTr1qlG1FE7mnwZMZ-Dh0YmBCsddwQY7JxwOcyhRCHrh5HoI9r3tLOHnN536icCyqUQHBNtXM5DNcFVFRTiLBrSOIHZTLE15Q5YO2PMK56omvrWS4Pe3G-k-X3d7VnItZoeQ1j0oyyX1xtDSMCHvAR74jLCZryTHVqsoIlAgXHUoQLOGx5U8xJJo5fVaKMD0",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjE3YWM2NWMwYTMxNWEzZmQwOWFiZGM0MjI4Y2RjNjIzMGY1MDlmN2U0ZDg5NGM3NTQxMDliMDBiZDQ2MWRmNGE0ZDk5Yzk4YWViZTk3NjIiLCJpYXQiOjE3MTcxMzQ3NjAuNzA1NjQ2MDM4MDU1NDE5OTIxODc1LCJuYmYiOjE3MTcxMzQ3NjAuNzA1NjQ3OTQ1NDA0MDUyNzM0Mzc1LCJleHAiOjE3NDg2NzA3NjAuNjk4OTg1MDk5NzkyNDgwNDY4NzUsInN1YiI6IjgiLCJzY29wZXMiOltdfQ.Vp2zyTKyJn21busPDL9btGNSoK3DWZg3jQW3MXsLt8BwIcGoUWAoo9gLZ4_Ygjf7MDeLP9I7RipnXkd_VkVOPVLUiPpUPhw6oL2pVM7rpa7PBCslYdGrKy_Jv-seyW9NFKZwErZ7pklX9HQKcCkCTBlsP4s0ERLPFJ9Q0hFVY49OpbXQByR8wvndJ5fOyy36t4E_K3GWoU-xGEOaMsXLEFV2MiKuQrz0cIkjOQ9LtD0GTZ0BiOuqrBLdN4E-UefW6wIfICOErYN6O_AYrVZKqNiCTwYf4m7SbxSAJ8BEvgRCE3zyIbBs8a8222S4LDpd3V5PBiK9SaHl5Ab50Enx0fyZg63y4bGh4E5RKVDNloIneHBb5n3uCosN0Iu-ZmSU4oJm8rTBfLJbfsKUtABT7w4Njq72wQONvcpUfmJma3_jxjHI75QVR9x1m1XcneDnB8L1uc4YnRx9hel-rF3SDvqCU4WFpcF9XRxJTC4DGe4JMj1e8531OoxS5Je2eh2itgG12Yl-r6owIw4IQkI3OH_BojIz2IeSjzrsVghP88igM1PkKgtlVcsVo7aUNpWN2ttFQDYNFn28yNzjo5snalBZsmXRukSw-xtjyJl_0VHorfJBrmqBE7wP0P5-hrvK99hZPqo8aH-21-4SdrLNw_Ts2lwFUrISq7h_bUbw4gE",
 									"type": "string"
 								}
 							]
@@ -286,16 +404,52 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/SubCategory",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/SubCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
+								"api",
+								"SubCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SubCategory Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryid\" : \"1011003\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/SubCategory",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
 								"api",
 								"SubCategory"
 							]
@@ -328,15 +482,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/AddSubCategory",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/AddSubCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"AddSubCategory"
@@ -370,15 +522,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/ShowSubCategory",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/ShowSubCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"ShowSubCategory"
@@ -404,7 +554,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\" :\"10120121\",\r\n    \"name\" :\"Dummy Data\",\r\n    \"categoryid\":\"1011005\",\r\n    \"status\":\"2\"\r\n}",
+							"raw": "{\r\n    \"id\" :\"1012001\",\r\n    \"name\" :\"Dummy Data\",\r\n    \"categoryid\":\"1011005\",\r\n    \"status\":\"2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -412,15 +562,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/UpdateSubCategory",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/UpdateSubCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"UpdateSubCategory"
@@ -446,7 +594,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\" :\"1012006\"\r\n}",
+							"raw": "{\r\n    \"id\" :\"1012001\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -454,15 +602,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/DeleteSubCategory",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/DeleteSubCategory",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"DeleteSubCategory"
@@ -492,15 +638,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/ItemSize",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/ItemSize",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"ItemSize"
@@ -698,15 +842,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/ItemType",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/ItemType",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"ItemType"
@@ -904,15 +1046,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/Item",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/Item",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"Item"
@@ -946,15 +1086,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/AddItem",
+							"raw": "http://tilesshop.sourceofcapacity.com/api/AddItem",
 							"protocol": "http",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"tilesshop",
+								"sourceofcapacity",
+								"com"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"AddItem"
@@ -1084,6 +1222,326 @@
 							"path": [
 								"api",
 								"DeleteItem"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ItemStock",
+			"item": [
+				{
+					"name": "localhost/tile-shop-app/api/Stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGE1ZjRjNmY3N2I4MjY4ZjE5ZTM3ZTc2NzkwODIwMTk3NTNmMTI0NTdkNzI1OGRmY2ZiZjEwZDhhOTMyOThkZTRiMWRiODNjOTk2OTk1OWUiLCJpYXQiOjE3MTc0NDI5MzQuNjU5MDgxLCJuYmYiOjE3MTc0NDI5MzQuNjU5MDg1LCJleHAiOjE3NDg5Nzg5MzQuNDM4NTkzLCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.K-CX1k_IJGoTuCYZEd3Fpn5yHA0gvzFQhk6lGKahKXUm70d_zrr0G0BsSVwJ_dSCDpefwIk8YTLql26EXT_Ps17mIi3PF0V-P_JA8KCYC8dDwQHk8URpIjft99W0TckRZhK5dcuAWeGguMGjcw7HEgBXQFAGeS2FuExeCZGSc-y5D7b9Uc7O8eRWikfl9a3ZviFbOSSTyzTDUIrhMPYxEfHKYOOpkUBmtLKTVCGKP1Jj71P-HBbGbqne7yOyfbB-BJ8gPIXFoWj6EEOeobWAIFsY_lbbMJ9OMH5Dsu3F0ELDIcPsk9c1n91n17IbY2kzpPOcz0svcVm38Ohm8DFfU1fW8dobtyDkJArS3RnzWmZ9LkDGnOstlqgGWy5DtW-NQ9mPNeFvGEbfHp0iaWynJ0J0k7LR1rt_jQMqfTSNok4L8--EDKLoT_bIXV8L2cp_iIHg6OpjrYEMegOmeDrhkkZdI-mBGan97qTjWBhd1_qIYLWaVM1gdFuvo-P3cKKMIYDtj9mkvu4qQvq0NFkarvZ9-9IhZoUibFBuR_6nsZp114keYKCEDQhcBjbwqfCDEn9SsVPo0-k12vsG5ZBt8tt5YGVP7nVk9eEzQWv8eLdGnfgqGXE-D7cTj2I-LGk4RtmCuo1Ont3EmqhqZN-auynS51x7QHOmH1cxpmYpSZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/tile-shop-app/api/Stock",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"Stock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"9\",\r\n    \"stock_code\":\"W2030-103BRD\",\r\n    \"item_id\":\"1071002\",\r\n    \"meas_unit\":\"CM\",\r\n    \"qty_unit\":\"CTN\",\r\n    \"meas\":\"8650\",\r\n    \"qty\":\"20\",\r\n    \"sell_price\":\"300\",\r\n    \"buy_price\":\"250\",\r\n    \"status\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/AddStock",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"AddStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStock",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGE1ZjRjNmY3N2I4MjY4ZjE5ZTM3ZTc2NzkwODIwMTk3NTNmMTI0NTdkNzI1OGRmY2ZiZjEwZDhhOTMyOThkZTRiMWRiODNjOTk2OTk1OWUiLCJpYXQiOjE3MTc0NDI5MzQuNjU5MDgxLCJuYmYiOjE3MTc0NDI5MzQuNjU5MDg1LCJleHAiOjE3NDg5Nzg5MzQuNDM4NTkzLCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.K-CX1k_IJGoTuCYZEd3Fpn5yHA0gvzFQhk6lGKahKXUm70d_zrr0G0BsSVwJ_dSCDpefwIk8YTLql26EXT_Ps17mIi3PF0V-P_JA8KCYC8dDwQHk8URpIjft99W0TckRZhK5dcuAWeGguMGjcw7HEgBXQFAGeS2FuExeCZGSc-y5D7b9Uc7O8eRWikfl9a3ZviFbOSSTyzTDUIrhMPYxEfHKYOOpkUBmtLKTVCGKP1Jj71P-HBbGbqne7yOyfbB-BJ8gPIXFoWj6EEOeobWAIFsY_lbbMJ9OMH5Dsu3F0ELDIcPsk9c1n91n17IbY2kzpPOcz0svcVm38Ohm8DFfU1fW8dobtyDkJArS3RnzWmZ9LkDGnOstlqgGWy5DtW-NQ9mPNeFvGEbfHp0iaWynJ0J0k7LR1rt_jQMqfTSNok4L8--EDKLoT_bIXV8L2cp_iIHg6OpjrYEMegOmeDrhkkZdI-mBGan97qTjWBhd1_qIYLWaVM1gdFuvo-P3cKKMIYDtj9mkvu4qQvq0NFkarvZ9-9IhZoUibFBuR_6nsZp114keYKCEDQhcBjbwqfCDEn9SsVPo0-k12vsG5ZBt8tt5YGVP7nVk9eEzQWv8eLdGnfgqGXE-D7cTj2I-LGk4RtmCuo1Ont3EmqhqZN-auynS51x7QHOmH1cxpmYpSZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"7\",\r\n    \"stock_code\":\"W2030-103BRD\",\r\n    \"item_id\":\"1071002\",\r\n    \"meas_unit\":\"CM\",\r\n    \"qty_unit\":\"CTN\",\r\n    \"meas\":\"8650\",\r\n    \"qty\":\"20\",\r\n    \"sell_price\":\"300\",\r\n    \"buy_price\":\"250\",\r\n    \"status\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/UpdateStock",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"UpdateStock"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/DeleteStock",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"DeleteStock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ItemSales",
+			"item": [
+				{
+					"name": "Sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGE1ZjRjNmY3N2I4MjY4ZjE5ZTM3ZTc2NzkwODIwMTk3NTNmMTI0NTdkNzI1OGRmY2ZiZjEwZDhhOTMyOThkZTRiMWRiODNjOTk2OTk1OWUiLCJpYXQiOjE3MTc0NDI5MzQuNjU5MDgxLCJuYmYiOjE3MTc0NDI5MzQuNjU5MDg1LCJleHAiOjE3NDg5Nzg5MzQuNDM4NTkzLCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.K-CX1k_IJGoTuCYZEd3Fpn5yHA0gvzFQhk6lGKahKXUm70d_zrr0G0BsSVwJ_dSCDpefwIk8YTLql26EXT_Ps17mIi3PF0V-P_JA8KCYC8dDwQHk8URpIjft99W0TckRZhK5dcuAWeGguMGjcw7HEgBXQFAGeS2FuExeCZGSc-y5D7b9Uc7O8eRWikfl9a3ZviFbOSSTyzTDUIrhMPYxEfHKYOOpkUBmtLKTVCGKP1Jj71P-HBbGbqne7yOyfbB-BJ8gPIXFoWj6EEOeobWAIFsY_lbbMJ9OMH5Dsu3F0ELDIcPsk9c1n91n17IbY2kzpPOcz0svcVm38Ohm8DFfU1fW8dobtyDkJArS3RnzWmZ9LkDGnOstlqgGWy5DtW-NQ9mPNeFvGEbfHp0iaWynJ0J0k7LR1rt_jQMqfTSNok4L8--EDKLoT_bIXV8L2cp_iIHg6OpjrYEMegOmeDrhkkZdI-mBGan97qTjWBhd1_qIYLWaVM1gdFuvo-P3cKKMIYDtj9mkvu4qQvq0NFkarvZ9-9IhZoUibFBuR_6nsZp114keYKCEDQhcBjbwqfCDEn9SsVPo0-k12vsG5ZBt8tt5YGVP7nVk9eEzQWv8eLdGnfgqGXE-D7cTj2I-LGk4RtmCuo1Ont3EmqhqZN-auynS51x7QHOmH1cxpmYpSZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/tile-shop-app/api/Sales",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"Sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"3\",\r\n    \"invoice_no\":\"W20230\",\r\n    \"stock_id\":\"3\",\r\n    \"item_id\":\"1071001\",\r\n    \"meas_unit\":\"CM\",\r\n    \"qty_unit\":\"CTN\",\r\n    \"meas\":\"8650\",\r\n    \"qty\":\"200\",\r\n    \"price\":\"9850\",\r\n    \"vat\":\"\",\r\n    \"tax\":\"\",\r\n    \"discount\":\"\",\r\n    \"others\":\"\",\r\n    \"pay_status\":\"Due\",\r\n    \"status\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/AddSales",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"AddSales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateStock",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNGE1ZjRjNmY3N2I4MjY4ZjE5ZTM3ZTc2NzkwODIwMTk3NTNmMTI0NTdkNzI1OGRmY2ZiZjEwZDhhOTMyOThkZTRiMWRiODNjOTk2OTk1OWUiLCJpYXQiOjE3MTc0NDI5MzQuNjU5MDgxLCJuYmYiOjE3MTc0NDI5MzQuNjU5MDg1LCJleHAiOjE3NDg5Nzg5MzQuNDM4NTkzLCJzdWIiOiI4Iiwic2NvcGVzIjpbXX0.K-CX1k_IJGoTuCYZEd3Fpn5yHA0gvzFQhk6lGKahKXUm70d_zrr0G0BsSVwJ_dSCDpefwIk8YTLql26EXT_Ps17mIi3PF0V-P_JA8KCYC8dDwQHk8URpIjft99W0TckRZhK5dcuAWeGguMGjcw7HEgBXQFAGeS2FuExeCZGSc-y5D7b9Uc7O8eRWikfl9a3ZviFbOSSTyzTDUIrhMPYxEfHKYOOpkUBmtLKTVCGKP1Jj71P-HBbGbqne7yOyfbB-BJ8gPIXFoWj6EEOeobWAIFsY_lbbMJ9OMH5Dsu3F0ELDIcPsk9c1n91n17IbY2kzpPOcz0svcVm38Ohm8DFfU1fW8dobtyDkJArS3RnzWmZ9LkDGnOstlqgGWy5DtW-NQ9mPNeFvGEbfHp0iaWynJ0J0k7LR1rt_jQMqfTSNok4L8--EDKLoT_bIXV8L2cp_iIHg6OpjrYEMegOmeDrhkkZdI-mBGan97qTjWBhd1_qIYLWaVM1gdFuvo-P3cKKMIYDtj9mkvu4qQvq0NFkarvZ9-9IhZoUibFBuR_6nsZp114keYKCEDQhcBjbwqfCDEn9SsVPo0-k12vsG5ZBt8tt5YGVP7nVk9eEzQWv8eLdGnfgqGXE-D7cTj2I-LGk4RtmCuo1Ont3EmqhqZN-auynS51x7QHOmH1cxpmYpSZE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"3\",\r\n    \"invoice_no\":\"W20230\",\r\n    \"stock_id\":\"3\",\r\n    \"item_id\":\"1071001\",\r\n    \"meas_unit\":\"CM\",\r\n    \"qty_unit\":\"CTN\",\r\n    \"meas\":\"8650\",\r\n    \"qty\":\"200\",\r\n    \"price\":\"9850\",\r\n    \"vat\":\"\",\r\n    \"tax\":\"\",\r\n    \"discount\":\"\",\r\n    \"others\":\"\",\r\n    \"pay_status\":\"Paid\",\r\n    \"status\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/UpdateSales",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"UpdateSales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteStock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWNkMTE5MDA2NzExMTc5NDYwMDUwYzYyMDI0YTcxODU3ZDUyOWJjMDEyNzg1MjBiODEyNDVjZDVlNDEwMGJiODJiOWM3YjZmOGU5MzkzYmMiLCJpYXQiOjE3MTczMzgyMDIuNzk4NTQyLCJuYmYiOjE3MTczMzgyMDIuNzk4NTQ2LCJleHAiOjE3NDg4NzQyMDIuNzA5Nywic3ViIjoiOCIsInNjb3BlcyI6W119.J9QdIDPLxizVjlayqvEhaHkWCrBqTvZHK2xmXbBdyUZBonX9kCi69J9AVvfCKE6WrR7hKp1OiwrRX22eK7dZDjb1Mepz7UQPxFgF6U_VDs4NeWleMwoYXJxoJtV2hjsEj73qUrJ9R8k5FGY97Mm9W-tZom6OSlqtSIwje0Qls33hKpX_d5ns6MeTT8Xek1h3g4gpID--oAkWPVck5kMNeBxz2U7NtFzqn8lH0iLEtEcQe_CfbSF0jsBjswaoy0p7pdSYbCrjzdHCm-i4OCwKG-pHUDt-pS_a7Eyuf2e_syg2UKnwF6-bFuHYCxy1Oy3fIsgPHMvtGO7y1uAEUPRQ5abS3emLTriOYWrOelXFGU7Pv_SN0DvX9OtZFWbhbtx8lttZ3PY08UGRsUpYFCjm6FwnhKuNHARbJjwDFDpTDUYtq8wur2tCzEFEXJQslZhk-bB3QcsvZPFI7DHVGMoaspJaIWLHuMA89WCo8zPUoxOii2rftNM5AHHPl4Qzj9YUgv86BbGGdCxHODQMskbmnvJwsbEU98BBf41TF2Pm8BimuSsm4La4kJmOZZQV_rny8_huLyWULkDPV0eLD4FoiecGU0zvxEIqtb5Fd9O226OzCfjrbISmNQb1ETe4YGqBevE1-AZ8D5fa-pxaoUxVlRu5V0O1d3Su6x_FYcA4iFc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost/tile-shop-app/api/DeleteStock",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"tile-shop-app",
+								"api",
+								"DeleteStock"
 							]
 						}
 					},

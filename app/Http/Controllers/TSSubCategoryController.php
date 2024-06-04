@@ -14,7 +14,11 @@ class TSSubCategoryController extends Controller
 {
     public function index():JsonResponse{
         $category = TSSubCategory::where('status', '1')->get();
-        return $this->sendResponse(TSSubCategoryResource::collection($category),"Category Get Successfully");
+        if ($category->count() > 0) {
+            return $this->sendResponse(TSSubCategoryResource::collection($category),"Sub Category Get Successfully");
+        }else{
+            return $this->sendError("Sub Category Not Found", []);
+        }
     }
     public function getSubCategoryByCat(Request $request):JsonResponse{
 
@@ -27,7 +31,6 @@ class TSSubCategoryController extends Controller
         $category = TSSubCategory::where('categoryid', $request->categoryid)->get();
         return $this->sendResponse(TSSubCategoryResource::collection($category),"Category Get Successfully");
     }
-
     public function store(Request $request):JsonResponse{
         $input = $request->all();
         $validator = Validator::make($request->all(),[
@@ -51,7 +54,6 @@ class TSSubCategoryController extends Controller
         $category = TSSubCategory::create($inArr);
         return $this->sendResponse(new TSSubCategoryResource($category),"Category Created Successfully");
     }
-
     public function show(Request $request):JsonResponse{
         $input = $request->all();
         $validator = Validator::make($request->all(),[
@@ -71,7 +73,6 @@ class TSSubCategoryController extends Controller
         }
 
     }
-
     public function update(Request $request):JsonResponse{
         $validator = Validator::make($request->all(), [
             'id' => 'required|integer',
@@ -128,7 +129,7 @@ class TSSubCategoryController extends Controller
             'update_by' => $userId,
             'update_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSSubCategory::find($id);
+        $rowData = TSSubCategory::where('id', $id)->whereNotIn('status', ['3'])->first();
         if ($rowData) {
             $rowData->update($inArr);
             // $rowData->delete();

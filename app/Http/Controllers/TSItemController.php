@@ -13,7 +13,11 @@ class TSItemController extends Controller
 {
     public function index():JsonResponse{
         $rowData = TSItem::where('status', '1')->get();
-        return $this->sendResponse(TSItemResource::collection($rowData),"Item Get Successfully");
+        if ($rowData->count() > 0) {
+            return $this->sendResponse(TSItemResource::collection($rowData),"Item Get Successfully");
+        }else{
+            return $this->sendError("Item Not Found", []);
+        }
     }
 
     public function store(Request $request):JsonResponse{
@@ -122,7 +126,7 @@ class TSItemController extends Controller
             'update_by' => $userId,
             'update_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSItem::find($id);
+        $rowData = TSItem::where('id', $id)->whereNotIn('status', ['3'])->first();
         if ($rowData) {
             $rowData->update($inArr);
             // $rowData->delete();

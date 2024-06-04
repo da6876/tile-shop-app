@@ -10,7 +10,6 @@ use Carbon\Carbon;
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
-
     public function sendResponse($result,$message){
         $responses = [
             'code'=> 200,
@@ -39,4 +38,5 @@ class Controller extends BaseController
         $formattedDateTime = $currentDateTime->toDateTimeString(); // e.g., "2024-05-24 14:55:23"
         return $formattedDateTime;
     }
+
 }

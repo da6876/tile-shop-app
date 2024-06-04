@@ -13,7 +13,11 @@ class TSItemSizeController extends Controller
 {
     public function index():JsonResponse{
         $rowData = TSItemSize::where('status', '1')->get();
-        return $this->sendResponse(TSItemSizeResource::collection($rowData),"Category Get Successfully");
+        if ($rowData->count() > 0) {
+            return $this->sendResponse(TSItemSizeResource::collection($rowData),"Item Size Get Successfully");
+        }else{
+            return $this->sendError("Item Size Not Found", []);
+        }
     }
 
     public function store(Request $request):JsonResponse{
@@ -94,7 +98,7 @@ class TSItemSizeController extends Controller
             'update_by' => $userId,
             'update_date' => $this->getCurrentDateTime(),
         ];
-        $rowData = TSItemSize::find($id);
+        $rowData = TSItemSize::where('id', $id)->whereNotIn('status', ['3'])->first();
         if ($rowData) {
             $rowData->update($inArr);
             // $rowData->delete();
@@ -103,4 +107,5 @@ class TSItemSizeController extends Controller
             return $this->sendError("Item Size Not Found", []);
         }
     }
+
 }

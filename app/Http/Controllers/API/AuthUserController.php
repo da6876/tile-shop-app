@@ -20,6 +20,11 @@ class AuthUserController extends Controller
             ->get();
         return $this->sendResponse(UserResource::collection($users),"User Get Successfully");
     }
+    public function logins()
+    {
+
+        return $this->sendResponse([],"User Get Successfully");
+    }
 
     public function update(Request $request):JsonResponse{
         $validator = Validator::make($request->all(), [
